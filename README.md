@@ -6,7 +6,7 @@ m.lau.zingaretti@gmail.com
 
 ---
 
-Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present DeepAFS: a pyhon based pipeline to automatic analysis of images fruits.
+Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present **DeepAFS: a pyhon based pipeline to automatic analysis of images fruits**.
 
 DeepAFS is not the first available tool to  asses fruit shape. Tomato Analyzer (TA) [1] is a tool developed to scan tomatoes, but can be easily adapted to alternative fruits analysis or even roots. However, its main difficulty lies in the fact that it is manual and requires many interventions from users, allowing only one image at a time. ImageJ is another powerful tool for image analysis, which has many specific developments on the geometric morphometric field [2], but it lucks the advantages of python and although it is an open source language, which supports macros and  extensions, it usually requires many actions by users, making it more inflexible.   
 
@@ -67,7 +67,7 @@ The best option to use the program is to follow the examples.
 
 * ```landmarks_gen``` This function takes an output from `imgObjects` and computes a serie of predefined pseudo-landmarks for the fruit contour. This step is necessary to perform the multivariate analyzes.
 
-*```Apple_LD``` is a function suited to analyze apple image where only fruits with the inner section are present (see more details in the examples). 
+* ```Apple_LD``` is a function suited to analyze apple image where only fruits with the inner section are present (see more details in the examples). 
 
 
 ### How to contribute
@@ -89,13 +89,13 @@ Copyright (C) 2020 Laura M. Zingaretti
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
-  ### Bibliography
+### Bibliography
+ 
  [1] Brewer, M. T., Lang, L., Fujimura, K., Dujmovic, N., Gray, S., & van der Knaap, E. (2006). Development of a controlled vocabulary and software application to analyze fruit shape variation in tomato and other plant species. Plant physiology, 141(1), 15-25.
 
  [2] David Legland, Ignacio Arganda-Carreras, Philippe Andrey, MorphoLibJ: integrated library and plugins for mathematical morphology with ImageJ, Bioinformatics, Volume 32, Issue 22, 15 November 2016, Pages 3532–3534, https://doi.org/10.1093/bioinformatics/btw413
 
-[3] Bradski, G., & Kaehler, A. (2008). Learning OpenCV: Computer vision with the OpenCV library. " O'Reilly Media, Inc.".
+ [3] Bradski, G., & Kaehler, A. (2008). Learning OpenCV: Computer vision with the OpenCV library. " O'Reilly Media, Inc.".
 
  [4] Van der Walt, S., Schönberger, J. L., Nunez-Iglesias, J., Boulogne, F., Warner, J. D., Yager, N., ... & Yu, T. (2014). scikit-image: image processing in Python. PeerJ, 2, e453.
 
