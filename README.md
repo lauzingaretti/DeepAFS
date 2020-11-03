@@ -90,14 +90,16 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-#### Bibliography
- 
- [1] Brewer, M. T., Lang, L., Fujimura, K., Dujmovic, N., Gray, S., & van der Knaap, E. (2006). Development of a controlled vocabulary and software application to analyze fruit shape variation in tomato and other plant species. Plant physiology, 141(1), 15-25.
+---
 
- [2] David Legland, Ignacio Arganda-Carreras, Philippe Andrey, MorphoLibJ: integrated library and plugins for mathematical morphology with ImageJ, Bioinformatics, Volume 32, Issue 22, 15 November 2016, Pages 3532–3534, https://doi.org/10.1093/bioinformatics/btw413
+### Bibliography
 
- [3] Bradski, G., & Kaehler, A. (2008). Learning OpenCV: Computer vision with the OpenCV library. " O'Reilly Media, Inc.".
+[1] Brewer, M. T., Lang, L., Fujimura, K., Dujmovic, N., Gray, S., & van der Knaap, E. (2006). Development of a controlled vocabulary and software application to analyze fruit shape variation in tomato and other plant species. Plant physiology, 141(1), 15-25.
 
- [4] Van der Walt, S., Schönberger, J. L., Nunez-Iglesias, J., Boulogne, F., Warner, J. D., Yager, N., ... & Yu, T. (2014). scikit-image: image processing in Python. PeerJ, 2, e453.
+[2] David Legland, Ignacio Arganda-Carreras, Philippe Andrey, MorphoLibJ: integrated library and plugins for mathematical morphology with ImageJ, Bioinformatics, Volume 32, Issue 22, 15 November 2016, Pages 3532–3534, https://doi.org/10.1093/bioinformatics/btw413
 
- [5] Klingenberg, C. P. (2010). Evolution and development of shape: integrating quantitative approaches. Nature Reviews Genetics, 11(9), 623-635.
+[3] Bradski, G., & Kaehler, A. (2008). Learning OpenCV: Computer vision with the OpenCV library. " O'Reilly Media, Inc.".
+
+[4] Van der Walt, S., Schönberger, J. L., Nunez-Iglesias, J., Boulogne, F., Warner, J. D., Yager, N., ... & Yu, T. (2014). scikit-image: image processing in Python. PeerJ, 2, e453.
+
+[5] Klingenberg, C. P. (2010). Evolution and development of shape: integrating quantitative approaches. Nature Reviews Genetics, 11(9), 623-635.
