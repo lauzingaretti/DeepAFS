@@ -52,7 +52,7 @@ The basic philosophy of **DeepAFS** is to have a fruit image file with homogeneo
 
 ### Examples
 The best option to use the program is to follow the examples.
-* [`main.py`](https://github.com/miguelperezenciso/SeqBreed/blob/master/main.py) and [`main.ipynb`](https://github.com/lauzingaretti/DeepAFS/blob/master/main.ipynb) illustrates main functionalities.
+* [`main.ipynb`](https://github.com/lauzingaretti/DeepAFS/blob/master/main.ipynb) illustrates main functionalities.
 
 
 ### Main classes
