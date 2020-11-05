@@ -90,10 +90,15 @@ def Apple_LD(self, both_sizes=False):
 
         segmented_image = segmented_data.reshape(im.shape)
         m=[]
+        Lab = labels.reshape(im.shape[0],im.shape[1])
+
+
         for i in np.unique(labels):
             m.append(np.count_nonzero(labels.flatten()==i)/(im.shape[0]*im.shape[1]))
+
+
         aux=list(np.argsort(m))
-        aux.remove(np.argmin(m))
+        #aux.remove(np.argmin(m))
         aux.remove(np.argmax(m))
 
         ind_hearth= np.argsort(m)[1]
@@ -103,13 +108,25 @@ def Apple_LD(self, both_sizes=False):
 
 
         mask= np.zeros((im.shape[0],im.shape[1]),dtype="uint8")
-        La=labels.reshape(im.shape[0],im.shape[1])
-        mask[La== ind_triangle] = 255
+        auxmask=np.zeros((im.shape[0],im.shape[1]),dtype="uint8")
+        mask[Lab== ind_triangle] = 255
+        auxmask[Lab== ind_hearth] = 255
         kernel = np.ones((5,5),np.uint8)
         mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
         mask=cv2.medianBlur(mask,25,0)
+        auxmask = cv2.morphologyEx(auxmask, cv2.MORPH_OPEN, kernel)
+        auxmask=cv2.medianBlur(auxmask,25,0)
+        if(np.min(np.where(auxmask==255)[0])<np.min(np.where(mask==255)[0]) and auxmask[np.int(im.shape[0]/2),np.int(im.shape[1]/2)]!=255 ):
 
-        contours, hierarchy = cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+            mask=auxmask
+            contours, hierarchy = cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+            ind_hearth= np.argsort(m)[0]
+            ind_triangle= np.argsort(m)[1]
+            aux.remove(np.argsort(m)[1])
+            
+        else:
+            contours, hierarchy = cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+            aux.remove(np.argsort(m)[0])
         #print(len(contours))
         calix_a=0
         stem_pit_a=0
