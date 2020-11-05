@@ -3,18 +3,18 @@
 #### [Laura M Zingaretti](https://publons.com/researcher/3104357/maria-laura-zingaretti/)
 m.lau.zingaretti@gmail.com
 
+### Citation
+
+Automatic fruit morphology phenome and genetic analysis: An application in the octoploid strawberry. L.M. Zingaretti et al. (to be submitted)
 
 ---
+Automatizing phenotype measurement is needed to increase plant breeding efficiency. Morphological traits are relevant in many fruit breeding programs, as appearance influences consumer preference. Often, these traits are manually or semi-automatically obtained. Yet, fruit morphology evaluation can be boosted by resorting to fully automatized procedures and digital images provide a cost- effective opportunity for this purpose. Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present **DeepAFS: a pyhon based pipeline for automatic analysis of images fruits**, an automatized pipeline for comprehensive phenomic and genetic analysis of morphology traits extracted from inner and outer fruit images. The pipeline segments, classifies and labels the images, extracts conformation features, including linear (area, perimeter, height, width, circularity, shape descriptor, ratio between height and width) and multivariate (Fourier Elliptical components and Generalized Procrustes) statistics. Inner color patterns are obtained using an autoencoder to smooth out the image. In addition, we develop a variational autoencoder to automatically detect the most likely number of underlying shapes. Bayesian modeling is employed to estimate both additive and dominant effects for all traits. As expected, conformational traits are clearly heritable. Interestingly, dominance variance is higher than the additive component for most of the traits. 
 
-Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present **DeepAFS: a pyhon based pipeline for automatic analysis of images fruits**.
+DeepAFS is not the first available tool to  asses fruit shape. Tomato Analyzer (TA) [1] is a tool developed to scan tomatoes, and can be easily adapted to alternative fruits analysis or even roots. However, its main difficulty lies in it is manual and requires many interventions from users, allowing only one image at a time. ImageJ is another powerful tool for image analysis, which has many specific developments on the geometric morphometric field [2], but it lacks the advantages of python. Although it is an open source language, which supports macros and  extensions, it usually requires many actions by users, making it less flexible.   
 
-DeepAFS is not the first available tool to  asses fruit shape. Tomato Analyzer (TA) [1] is a tool developed to scan tomatoes, but can be easily adapted to alternative fruits analysis or even roots. However, its main difficulty lies in the fact that it is manual and requires many interventions from users, allowing only one image at a time. ImageJ is another powerful tool for image analysis, which has many specific developments on the geometric morphometric field [2], but it lacks the advantages of python and although it is an open source language, which supports macros and  extensions, it usually requires many actions by users, making it more inflexible.   
+DeepAFS takes advantage of the OpenCV [3] and scikit-image [4] tools to bring a fast, flexible and extensible tool, which can be used to fruit shape analysis from a Geometric-Morphometric (GM) view [5]. 
 
-DeepAFS takes advantage of the OpenCV [3] and scikit-image [4] tools to bring a fast, flexible and extensible tool, which can be used to fruit shape analysis from a Geometric-Morphometric (GM) view [5].
-
-Although morphological traits are highly dimensional, most of the tools for the assessment of fruit shape are based on linear measurements between pre-defined points such as elongation, circularity or diameter.  
-
-The pipeline addressed two main issues: 1) converting the raw data (fruit images) into a processed curated database, and 2) designing an efficient analysis workflow to analyze fruit shape phenome, by returning not only the fruit linear descriptors, but the landmarks, ready to carry out a multivariate analysis.
+The pipeline addresses two main issues: 1) converting the raw data (fruit images) into a processed curated database, and 2) designing an efficient analysis workflow to analyze fruit shape phenome, by returning not only the fruit linear descriptors, but also landmarks, ready to carry out a multivariate analysis.
 
 
 ### Requirements
