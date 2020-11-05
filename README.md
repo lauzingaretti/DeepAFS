@@ -1,4 +1,4 @@
-## DeepAFS: A python pipeline to automatic fruit segmentation
+## DeepAFS: A python pipeline for automatic fruit segmentation
 
 #### [Laura M Zingaretti](https://publons.com/researcher/3104357/maria-laura-zingaretti/)
 m.lau.zingaretti@gmail.com
@@ -6,7 +6,7 @@ m.lau.zingaretti@gmail.com
 
 ---
 
-Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present **DeepAFS: a pyhon based pipeline to automatic analysis of images fruits**.
+Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present **DeepAFS: a pyhon based pipeline for automatic analysis of images fruits**.
 
 DeepAFS is not the first available tool to  asses fruit shape. Tomato Analyzer (TA) [1] is a tool developed to scan tomatoes, but can be easily adapted to alternative fruits analysis or even roots. However, its main difficulty lies in the fact that it is manual and requires many interventions from users, allowing only one image at a time. ImageJ is another powerful tool for image analysis, which has many specific developments on the geometric morphometric field [2], but it lacks the advantages of python and although it is an open source language, which supports macros and  extensions, it usually requires many actions by users, making it more inflexible.   
 
