@@ -14,8 +14,7 @@ DeepAFS is not the first available tool to  asses fruit shape. Tomato Analyzer (
 
 DeepAFS takes advantage of the OpenCV [3] and scikit-image [4] tools to bring a fast, flexible and extensible tool, which can be used to fruit shape analysis from a Geometric-Morphometric (GM) view [5]. 
 
-The pipeline addresses two main issues: 1) converting the raw data (fruit images) into a processed curated database, and 2) designing an efficient analysis workflow to analyze fruit shape phenome, by returning not only the fruit linear descriptors, but also landmarks, ready to carry out a multivariate analysis.
-
+The pipeline 1) converts the raw data (fruit images) into a processed curated database, and 2) runs a workflow to automatically analyze fruit shape phenome, by returning not only the fruit linear descriptors, but also landmarks, ready to carry out a multivariate analysis.
 
 ### Requirements
 See [requirements.txt](https://github.com/lauzingaretti/DeepAFS/blob/master/requirements.txt).
