@@ -123,7 +123,7 @@ def Apple_LD(self, both_sizes=False):
             ind_hearth= np.argsort(m)[0]
             ind_triangle= np.argsort(m)[1]
             aux.remove(np.argsort(m)[1])
-            
+
         else:
             contours, hierarchy = cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
             aux.remove(np.argsort(m)[0])
@@ -142,9 +142,10 @@ def Apple_LD(self, both_sizes=False):
                 if (h/w>=0.2):
                     stem_pit_a=stem_pit_a + area
         multip=im.shape[0]*im.shape[1]
-        calix_a=(((calix_a/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-        stem_pit_a=(((stem_pit_a/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-
+        #calix_a=(((calix_a/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        #stem_pit_a=(((stem_pit_a/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        calix_a=calix_a*(0.026458333**2)
+        stem_pit_a=stem_pit_a*(0.026458333**2)
         masc2= np.zeros((im.shape[0],im.shape[1]),dtype="uint8")
 
         for cluster in mesocarp_:
@@ -163,8 +164,8 @@ def Apple_LD(self, both_sizes=False):
             area=cv2.contourArea(c)
             mes_area=area+mes_area
 
-        mes_area=(((mes_area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-
+        #mes_area=(((mes_area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        mes_area=mes_area*(0.026458333**2)
 
 
         #medidas normales
@@ -206,7 +207,8 @@ def Apple_LD(self, both_sizes=False):
         hull_area = cv2.contourArea(hull)
         solidity = float(area)/hull_area
         multip=im.shape[0]*im.shape[1]
-        AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        #AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        AreaFruit=area*(0.026458333**2)
         perimeter = cv2.arcLength(c,True)
         circularity= 4*np.pi*(area/perimeter**2)
         boundingRect=h/w
@@ -240,7 +242,7 @@ def Apple_LD(self, both_sizes=False):
             'widht_at_25h':width_at_25_h*0.026458333,
             'widht_at_half_h':width_at_half_h*0.026458333,
             'Area': area,
-            'Perimeter':perimeter,
+            'Perimeter':perimeter*0.026458333,
             'Solidiy':solidity,
             'AreaReal':AreaFruit,
             'circularity':circularity,

@@ -174,7 +174,8 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
         hull_area = cv2.contourArea(hull)
         solidity = float(area)/hull_area
         multip=Example.shape[0]*Example.shape[1]
-        AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        #AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
+        AreaFruit=area*(0.026458333**2)
         perimeter = cv2.arcLength(c,True)
         circularity= 4*np.pi*(area/perimeter**2)
         boundingRect=h/w
@@ -204,7 +205,7 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
             'widht_at_25h':width_at_25_h*0.026458333,
             'widht_at_half_h':width_at_half_h*0.026458333,
             'Area': area,
-            'Perimeter':perimeter,
+            'Perimeter':perimeter*0.026458333,
             'Solidiy':solidity,
             'AreaReal':AreaFruit,
             'circularity':circularity,
