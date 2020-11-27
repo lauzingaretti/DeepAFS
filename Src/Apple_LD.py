@@ -16,11 +16,12 @@ from skimage.segmentation import slic
 from skimage.segmentation import mark_boundaries
 
 
-def Apple_LD(self, both_sizes=False):
+def Apple_LD(self, both_sizes=False,dpi=300):
     """
     This function remove the calix for apple image prior to compute the linear descriptors.
     it is only adapted for apples images
     both_sizes: logical, if true, it removes outer apple prior to calculate LD
+    dpi: dot by inches in the image
     """
     Objects =self.objects
     shape= self.shape
@@ -144,8 +145,8 @@ def Apple_LD(self, both_sizes=False):
         multip=im.shape[0]*im.shape[1]
         #calix_a=(((calix_a/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
         #stem_pit_a=(((stem_pit_a/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-        calix_a=calix_a*((2.54/300)**2)
-        stem_pit_a=stem_pit_a*((2.54/300)**2)
+        calix_a=calix_a*((2.54/dpi)**2)
+        stem_pit_a=stem_pit_a*((2.54/dpi)**2)
         masc2= np.zeros((im.shape[0],im.shape[1]),dtype="uint8")
 
         for cluster in mesocarp_:
@@ -165,7 +166,7 @@ def Apple_LD(self, both_sizes=False):
             mes_area=area+mes_area
 
         #mes_area=(((mes_area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-        mes_area=mes_area*((2.54/300)**2)
+        mes_area=mes_area*((2.54/dpi)**2)
 
 
         #medidas normales
@@ -208,7 +209,7 @@ def Apple_LD(self, both_sizes=False):
         solidity = float(area)/hull_area
         multip=im.shape[0]*im.shape[1]
         #AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-        AreaFruit=area*((2.54/300)**2)
+        AreaFruit=area*((2.54/dpi)**2)
         perimeter = cv2.arcLength(c,True)
         circularity= 4*np.pi*(area/perimeter**2)
         boundingRect=h/w
@@ -236,13 +237,13 @@ def Apple_LD(self, both_sizes=False):
             b={
             'Individuo': f,
             'Rep': kk,
-            'height': h*(2.54/300),
-            'width': w*(2.54/300),
-            'widht_at_75h':width_at_75_h*(2.54/300),
-            'widht_at_25h':width_at_25_h*(2.54/300),
-            'widht_at_half_h':width_at_half_h*(2.54/300),
+            'height': h*(2.54/dpi),
+            'width': w*(2.54/dpi),
+            'widht_at_75h':width_at_75_h*(2.54/dpi),
+            'widht_at_25h':width_at_25_h*(2.54/dpi),
+            'widht_at_half_h':width_at_half_h*(2.54/dpi),
             'Area': area,
-            'Perimeter':perimeter*(2.54/300),
+            'Perimeter':perimeter*(2.54/dpi),
             'Solidiy':solidity,
             'AreaReal':AreaFruit,
             'circularity':circularity,

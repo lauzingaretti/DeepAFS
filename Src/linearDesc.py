@@ -15,7 +15,7 @@ import pandas as pd
 from skimage.segmentation import slic
 from skimage.segmentation import mark_boundaries
 
-def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
+def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False,dpi=300):
     """
     Function to compute the linear descriptors from img
     self an object the class load_image
@@ -24,6 +24,7 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
     leaves (optimized for strawberries) Do the fruits have the calix? (only remove leaves for the outside fruits)
     Note leaves can be used to perform segmentation inside the fruit pattern, for instance in apple.
     mask_: logical if is true, the slic use the mask to segment the image.
+    dpi= dot by inches in the image
     """
     Objects =self.objects
     shape= self.shape
@@ -175,7 +176,7 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
         solidity = float(area)/hull_area
         multip=Example.shape[0]*Example.shape[1]
         #AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-        AreaFruit=area*((2.54/300)**2)
+        AreaFruit=area*((2.54/dpi)**2)
         perimeter = cv2.arcLength(c,True)
         circularity= 4*np.pi*(area/perimeter**2)
         boundingRect=h/w
@@ -199,13 +200,13 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
             b={
             'Individuo': f,
             'Rep': i,
-            'height': h*(2.54/300),
-            'width': w*(2.54/300),
-            'widht_at_75h':width_at_75_h*(2.54/300),
-            'widht_at_25h':width_at_25_h*(2.54/300),
-            'widht_at_half_h':width_at_half_h*(2.54/300),
+            'height': h*(2.54/dpi),
+            'width': w*(2.54/dpi),
+            'widht_at_75h':width_at_75_h*(2.54/dpi),
+            'widht_at_25h':width_at_25_h*(2.54/dpi),
+            'widht_at_half_h':width_at_half_h*(2.54/dpi),
             'Area': area,
-            'Perimeter':perimeter*(2.54/300),
+            'Perimeter':perimeter*(2.54/dpi),
             'Solidiy':solidity,
             'AreaReal':AreaFruit,
             'circularity':circularity,
