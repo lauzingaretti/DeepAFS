@@ -175,7 +175,7 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
         solidity = float(area)/hull_area
         multip=Example.shape[0]*Example.shape[1]
         #AreaFruit=(((area/(multip))*((np.pi)*(23.25/2)**2)))/(45339.0/(multip))
-        AreaFruit=area*(0.026458333**2)
+        AreaFruit=area*((2.54/300)**2)
         perimeter = cv2.arcLength(c,True)
         circularity= 4*np.pi*(area/perimeter**2)
         boundingRect=h/w
@@ -199,13 +199,13 @@ def Linear_Descriptors(self, both_sizes=True,leaves=True, mask_=False):
             b={
             'Individuo': f,
             'Rep': i,
-            'height': h*0.026458333,
-            'width': w*0.026458333,
-            'widht_at_75h':width_at_75_h*0.026458333,
-            'widht_at_25h':width_at_25_h*0.026458333,
-            'widht_at_half_h':width_at_half_h*0.026458333,
+            'height': h*(2.54/300),
+            'width': w*(2.54/300),
+            'widht_at_75h':width_at_75_h*(2.54/300),
+            'widht_at_25h':width_at_25_h*(2.54/300),
+            'widht_at_half_h':width_at_half_h*(2.54/300),
             'Area': area,
-            'Perimeter':perimeter*0.026458333,
+            'Perimeter':perimeter*(2.54/300),
             'Solidiy':solidity,
             'AreaReal':AreaFruit,
             'circularity':circularity,
