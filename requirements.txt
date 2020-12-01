@@ -1,0 +1,12 @@
+matplotlib==3.2.1
+opencv_contrib_python==4.2.0.34
+pandas==1.0.3
+pyefd==1.4.1
+scipy==1.5.4
+numpy==1.19.4
+imutils==0.5.3
+Pillow==8.0.1
+pytesseract==0.3.6
+scikit_learn==0.23.2
+skimage==0.0
+utils==1.0.1
