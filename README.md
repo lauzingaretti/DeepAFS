@@ -20,7 +20,12 @@ The pipeline 1) converts the raw data (fruit images) into a processed curated da
 See [requirements.txt](https://github.com/lauzingaretti/DeepAFS/blob/master/requirements.txt).
 
 ### Installation
-Clone this repository and in python run:
+Clone this repository, install requirements.txt 
+Open bash, go to the  main repository folder and run the following command:
+
+      pip install -r requirements.txt
+
+then in python run:
 
       from Src import load_image
       from Src import scanIm
