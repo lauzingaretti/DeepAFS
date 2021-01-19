@@ -5,8 +5,7 @@ m.lau.zingaretti@gmail.com
 
 ### Citation
 
-Automatic fruit morphology phenome and genetic analysis: An application in the octoploid strawberry. L.M. Zingaretti et al. (to be submitted)
-
+- Zingaretti, L. M., Monfort, A., & Perez-Enciso, M. (2020). Automatic fruit morphology phenome and genetic analysis: An application in the octoploid strawberry. Submited. 
 ---
 Automatizing phenotype measurement is needed to increase plant breeding efficiency. Morphological traits are relevant in many fruit breeding programs, as appearance influences consumer preference. Often, these traits are manually or semi-automatically obtained. Yet, fruit morphology evaluation can be boosted by resorting to fully automatized procedures and digital images provide a cost- effective opportunity for this purpose. Images are an inexpensive and versatile source of data in agriculture, however analyzing them remains a difficult task, partly due to their mathematical complexities and the scarcity of software. Here, we present **DeepAFS: a python based pipeline for automatic analysis of images fruits**, an automatized pipeline for comprehensive phenomic and genetic analysis of morphology traits extracted from inner and outer fruit images. The pipeline segments, classifies and labels the images, extracts conformation features, including linear (area, perimeter, height, width, circularity, shape descriptor, ratio between height and width) and multivariate (Fourier Elliptical components and Generalized Procrustes) statistics. Inner color patterns are obtained using an autoencoder to smooth out the image. In addition, we develop a variational autoencoder to automatically detect the most likely number of underlying shapes. Bayesian modeling is employed to estimate both additive and dominant effects for all traits. As expected, conformational traits are clearly heritable. Interestingly, dominance variance is higher than the additive component for most of the traits. 
 
