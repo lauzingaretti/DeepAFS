@@ -68,7 +68,7 @@ class load_image(object):
         if kernelsize==0:
             blur = im
         if threshold=="otsu":
-            x=(np.mean(im))
+            x=(np.median(im))
             x= x.astype(int)
             if x < 255/2:
                 ret3,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
@@ -85,7 +85,7 @@ class load_image(object):
 
         if threshold=="bin":
             print("remember to select proper lower limit for binary thresholding, the histogram information is helpful ")
-            x=(np.mean(im))
+            x=(np.median(im))
             x= x.astype(int)
             if x < 255/2:
                 th3= cv2.threshold(blur,ud,255,cv2.THRESH_BINARY)[1]
@@ -104,7 +104,7 @@ class load_image(object):
                 th3 = cv2.erode(th3, None, iterations=8)
 
         if threshold=="adap":
-            x=(np.mean(im))
+            x=(np.median(im))
             x= x.astype(int)
             if x < 255/2:
                 ret3,th3= cv2.threshold(blur,x,255,cv2.THRESH_BINARY)
@@ -120,7 +120,7 @@ class load_image(object):
             if erode is True:
                 th3 = cv2.erode(th3, None, iterations=8)
         if threshold=="gaussian":
-            x=(np.mean(im))
+            x=(np.median(im))
             x= x.astype(int)
             if x < 255/2:
                 th3 = cv2.adaptiveThreshold(blur,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,15,2)
